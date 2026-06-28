@@ -35,6 +35,7 @@ const done = document.getElementById("done");
 // Profile
 const profileName = document.getElementById("profile-name");
 const profileRole = document.getElementById("profile-role");
+const profileAvatar = document.getElementById("profile-avatar");
 const settingsName = document.getElementById("settings-name");
 const settingsRole = document.getElementById("settings-role");
 const saveProfile = document.getElementById("save-profile");
@@ -139,6 +140,10 @@ newTaskBtn.addEventListener("click", openModal);
 
 // Board Button
 openTaskModal.addEventListener("click", openModal);
+
+// Welcome Banner Button
+const welcomeTaskBtn = document.getElementById("welcome-task-btn");
+welcomeTaskBtn.addEventListener("click", openModal);
 
 // Close Button
 closeModal.addEventListener("click", closeTaskModal);
@@ -522,4 +527,18 @@ document.addEventListener("drop", e => {
 
     saveToLocalStorage();
     updateDashboard();
+});
+
+// Sidebar toggle (mobile)
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.querySelector(".sidebar");
+
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+    if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && e.target !== menuBtn) {
+        sidebar.classList.remove("open");
+    }
 });

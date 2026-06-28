@@ -209,25 +209,13 @@ body.dark-theme{
 }
 
 .avatar{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
+    width:40px;
+    height:40px;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    font-weight:600;
-
-    font-size:18px;
-
+    font-size:28px;
+    line-height:1;
 }
 
 .profile-info h3{
@@ -322,76 +310,6 @@ body.dark-theme{
 
 
 /* ========================================= */
-/* NAVBAR CENTER */
-/* ========================================= */
-
-.navbar-center{
-
-    flex:1;
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-/* ========================================= */
-/* SEARCH BOX */
-/* ========================================= */
-
-.search-box{
-
-    width:100%;
-
-    max-width:420px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:12px 18px;
-
-    gap:12px;
-
-}
-
-.search-box i{
-
-    color:var(--text-light);
-
-}
-
-.search-box input{
-
-    width:100%;
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    color:var(--text);
-
-    font-size:15px;
-
-}
-
-.search-box input::placeholder{
-
-    color:var(--text-light);
-
-}
-
-
-/* ========================================= */
 /* NAVBAR RIGHT */
 /* ========================================= */
 
@@ -436,6 +354,13 @@ body.dark-theme{
 
     font-size:18px;
 
+}
+
+.icon-btn i,
+.icon-btn svg,
+.primary-btn i,
+.primary-btn svg{
+    pointer-events:none;
 }
 
 .icon-btn:hover{
@@ -1345,80 +1270,280 @@ body.dark-theme{
 /* RESPONSIVE */
 /* ========================================= */
 
-@media(max-width:1200px){
-
-    .stats-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
+@media(max-width:1400px){
+    .stats-grid,
     .analytics-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
+        grid-template-columns:repeat(3,1fr);
     }
+}
 
+@media(max-width:1200px){
+    .stats-grid,
+    .analytics-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
     .kanban-board{
-
         grid-template-columns:repeat(2,1fr);
-
     }
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+    .welcome-banner h2{
+        font-size:24px;
+    }
+}
 
+@media(max-width:1024px){
+    .welcome-banner{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+        padding:24px;
+    }
+    .welcome-banner h2{
+        font-size:22px;
+    }
+    .page-heading h1{
+        font-size:22px;
+    }
+    .section-header h2{
+        font-size:22px;
+    }
 }
 
 @media(max-width:900px){
-
     .sidebar{
-
         width:90px;
-
+        padding:20px 12px;
     }
-
     .sidebar span,
     .logo p,
     .profile-info{
-
         display:none;
-
     }
-
     .logo{
-
         justify-content:center;
-
+        margin-bottom:30px;
     }
-
+    .logo h2{
+        display:none;
+    }
+    .nav-button{
+        justify-content:center;
+        padding:14px;
+        font-size:18px;
+    }
+    .nav-button span{
+        display:none;
+    }
+    .sidebar-profile{
+        justify-content:center;
+    }
+    .pages{
+        padding:20px;
+    }
 }
 
 @media(max-width:768px){
-
     .navbar{
-
         flex-direction:column;
-
         height:auto;
-
-        gap:20px;
-
-        padding:20px;
-
+        gap:15px;
+        padding:15px 20px;
     }
-
+    .navbar-left{
+        width:100%;
+        justify-content:space-between;
+    }
+    .navbar-right{
+        width:100%;
+        justify-content:flex-end;
+    }
     .stats-grid,
     .analytics-grid,
     .kanban-board,
     .dashboard-grid,
     .analytics-overview{
-
         grid-template-columns:1fr;
-
     }
-
+    .board-column{
+        min-height:300px;
+    }
     .modal-content{
-
         width:95%;
-
+        padding:20px;
     }
+    .welcome-banner{
+        padding:20px;
+    }
+    .welcome-banner h2{
+        font-size:20px;
+    }
+    .stat-card h2{
+        font-size:24px;
+    }
+    .board-header{
+        flex-direction:column;
+        gap:15px;
+        align-items:stretch;
+        text-align:center;
+    }
+    .board-header .primary-btn{
+        justify-content:center;
+    }
+}
 
+@media(max-width:576px){
+    .sidebar{
+        position:fixed;
+        left:-260px;
+        top:0;
+        bottom:0;
+        width:250px;
+        z-index:1000;
+        transition:left .3s ease;
+        box-shadow:none;
+    }
+    .sidebar.open{
+        left:0;
+        box-shadow:0 0 0 100vw rgba(0,0,0,.5);
+    }
+    .sidebar span,
+    .sidebar .logo p,
+    .sidebar .profile-info,
+    .sidebar .logo h2{
+        display:block;
+    }
+    .sidebar .logo{
+        justify-content:flex-start;
+    }
+    .sidebar .nav-button{
+        justify-content:flex-start;
+        font-size:15px;
+    }
+    .sidebar .nav-button span{
+        display:inline;
+    }
+    .pages{
+        padding:15px;
+    }
+    .navbar{
+        padding:10px 15px;
+        gap:10px;
+        z-index:1001;
+        position:relative;
+    }
+    .navbar-left{
+        gap:10px;
+    }
+    .page-heading h1{
+        font-size:16px;
+    }
+    .page-heading p{
+        font-size:11px;
+        margin-top:2px;
+    }
+    .icon-btn{
+        width:34px;
+        height:34px;
+        font-size:14px;
+    }
+    .primary-btn{
+        padding:8px 14px;
+        font-size:12px;
+    }
+    .primary-btn span{
+        display:none;
+    }
+    .welcome-banner h2{
+        font-size:17px;
+    }
+    .welcome-banner p{
+        font-size:13px;
+    }
+    .stat-card{
+        padding:16px;
+    }
+    .stat-icon{
+        width:48px;
+        height:48px;
+        font-size:20px;
+    }
+    .dashboard-card,
+    .overview-card{
+        padding:18px;
+    }
+    .card-header h3{
+        font-size:17px;
+    }
+    .score-circle{
+        width:100px;
+        height:100px;
+        font-size:20px;
+        border-width:8px;
+    }
+    .analytics-card{
+        padding:18px;
+    }
+    .analytics-icon{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+    .board-column{
+        min-height:250px;
+        padding:15px;
+    }
+    .column-header h3{
+        font-size:15px;
+    }
+    .task-card{
+        padding:12px;
+    }
+    .task-card h3{
+        font-size:14px;
+    }
+    .settings-card{
+        padding:18px;
+    }
+}
+
+@media(max-width:400px){
+    .pages{
+        padding:10px;
+    }
+    .navbar{
+        padding:8px 10px;
+        gap:6px;
+    }
+    .navbar-left{
+        gap:8px;
+    }
+    .page-heading h1{
+        font-size:14px;
+    }
+    .page-heading p{
+        display:none;
+    }
+    .icon-btn{
+        width:30px;
+        height:30px;
+        font-size:12px;
+    }
+    .primary-btn{
+        padding:6px 12px;
+        font-size:11px;
+    }
+    .welcome-banner{
+        padding:16px;
+    }
+    .welcome-banner h2{
+        font-size:15px;
+    }
+    .stat-card h2{
+        font-size:20px;
+    }
+    .stat-card h3{
+        font-size:12px;
+    }
 }
