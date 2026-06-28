@@ -3,6 +3,10 @@
 > A beautifully designed, fully client-side **Kanban-style task management app** built with vanilla HTML, CSS, and JavaScript. No frameworks, no backend, no dependencies — just clean, fast, and responsive productivity tooling right in your browser.
 
 ---
+### Netlify live link:
+https://flowva-app.netlify.app/
+
+---
 
 ## 📸 Screenshots
 
