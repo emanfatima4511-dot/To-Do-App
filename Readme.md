@@ -6,6 +6,9 @@
 ### Netlify live link:
 https://flowva-app.netlify.app/
 
+### Live vedio explanation:
+https://www.veed.io/view/cfaa479a-d6d5-4dfb-abaf-67efcedf6a7f?source=editor&panel=share
+
 ---
 
 ## 📸 Screenshots
